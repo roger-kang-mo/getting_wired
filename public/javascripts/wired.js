@@ -5,9 +5,14 @@ $('document').ready(function(){
   var currentSong = 0;
   var currentBG = 0
   var path = "/media/";
+  var currentlyPlayingText = $('#currently_playing');
+  var playingWrapper = $('#playing');
+  var expand = $('#expand');
+  var boxContainer = $('#box-container');
 
-  var songs = ["murdertrain.mp3", "dragonforce.mp3", "slayer.mp3"];
-  var backgrounds = ["fire.webm", "bowl.webm"];
+  var songs = ["dragonforce.mp3", "murdertrain.mp3",  "slayer.mp3", 'guile.mp3'];
+  var songTitles = ["DragonForce - Through the Fire and Flames", "The Foreskins - Murder Train", "Slayer - Raining Blood", "Street Fighter 2 - Guile's Theme"]
+  var backgrounds = ["bowl.webm", "fire.webm"];
 
   $('#previous').click(function(){
     playPrevious();
@@ -19,11 +24,23 @@ $('document').ready(function(){
 
   $('#pause').click(function(){
     pause();
-  })
+  });
 
   $('#play').click(function(){
     play();
-  })
+  });
+
+  $('#expand').click(function(){
+    goFullHard();
+  });
+
+  $('.timer-box').click(function(){
+    goFullHard();
+  });
+
+  var goFullHard = function(){
+    document.getElementById('bgvid').webkitRequestFullScreen();
+  }
 
   var playPrevious = function(){
     currentSong = currentSong == 0 ? songs.length - 1 : currentSong - 1;
@@ -52,6 +69,8 @@ $('document').ready(function(){
   }
 
   var play = function(){
+    currentlyPlayingText.text(songTitles[currentSong]);
+    playingWrapper.show()
     htmlAudioElem.play();
   }
 
@@ -62,5 +81,5 @@ $('document').ready(function(){
   setSources();
   newBg = path + backgrounds[currentBG];
   background.attr('src', newBg);
-  // play();
+  play();
 })

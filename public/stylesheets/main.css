@@ -2,13 +2,25 @@
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 500;
-  src: local('Raleway Medium'), local('Raleway-Medium'), url('fonts/raleway.woff') format('woff2');
+  src: local('Raleway Medium'), local('Raleway-Medium'), url('/fonts/raleway.woff') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 body {
   margin: 10px;
   font-family: 'Raleway', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#logo {
+  margin-top: 40px;
 }
 
 video { 
@@ -24,6 +36,10 @@ video {
   transition: 0.5s opacity;
 }
 
+#controls .fa {
+  font-size: 20px;
+}
+
 .fa {
   font-size: 20px;
   cursor: pointer;
@@ -31,10 +47,49 @@ video {
   color: #fff;
 }
 
-#controls {
+.footer {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+#playing {
+  display:none;
+  color: #fff;
+  width: 93%;
+}
+
+#playing div {
+  float: right;
+}
+
+#playing h4 {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+#playing .fa {
+  font-size: 25px;
+  cursor: default;
+}
+
+#controls {
+  width: 150px;
+  height: 20px;
+  position:absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#controls .overlay {
+  background-color: #ff0000;
+  opacity: .8;
+  -webkit-border-radius-topleft: 2px;
+  -moz-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  width: 100%;
+  height: 100%;
 }
 
 #box-container {
@@ -42,10 +97,12 @@ video {
 }
 
 .box-row {
-  /*width: 137px;*/
-  width: 900px;
+  width: 137px;
+  /*width: 900px;*/
   display: block;
-  height: 140px;
+  height: 132px;
+  margin: 5px 0;
+  overflow: hidden;
 }
 
 .nav-box {
@@ -53,15 +110,22 @@ video {
   height: 132px;
   background-color: #BC593A;
   opacity: 0.8;
-  margin: 1px;
   color: #CDD0A5;
   display:inline-block;
+  margin-left: 2px;
+  float: left;
+  min-height: 132px;
 
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+
+
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  transform: rotate(0);
 }
 
 .nav-box:hover {
@@ -73,32 +137,24 @@ video {
   margin-left: auto;
   margin-right: auto;
   margin-top: 22px;
+  height: 70px;
 }
 
-.nav-box h4 {
+h4 {
   text-align: center;
+  cursor: default;
 }
 
 .secondary-box {
-  /*display: none;*/
-  display: inline-block;
+  display: none;
+  /*display: inline-block;*/
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  clear: none;
 }
-
-.secondary-box-row {
-  display: inline;
-  width:90%;
-
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-}
-
 
 .box-row:hover {
   width: 825px;
