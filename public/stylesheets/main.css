@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Raleway Medium'), local('Raleway-Medium'), url('fonts/raleway.woff') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body {
+  margin: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+
+video { 
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+  transition: 0.5s opacity;
+}
+
+.fa {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+  color: #fff;
+}
+
+#controls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+#box-container {
+  margin-top:50px;
+}
+
+.box-row {
+  /*width: 137px;*/
+  width: 900px;
+  display: block;
+  height: 140px;
+}
+
+.nav-box {
+  width: 132px;
+  height: 132px;
+  background-color: #BC593A;
+  opacity: 0.8;
+  margin: 1px;
+  color: #CDD0A5;
+  display:inline-block;
+
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-box:hover {
+  opacity: 1;
+}
+
+.nav-box img {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+}
+
+.nav-box h4 {
+  text-align: center;
+}
+
+.secondary-box {
+  /*display: none;*/
+  display: inline-block;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.secondary-box-row {
+  display: inline;
+  width:90%;
+
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+
+.box-row:hover {
+  width: 825px;
+}
+
+.box-row:hover .secondary-box {
+  display: inline-block;
+}
+
