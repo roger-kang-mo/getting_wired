@@ -10,8 +10,8 @@ $('document').ready(function(){
   var expand = $('#expand');
   var boxContainer = $('#box-container');
 
-  var songs = ["dragonforce.mp3", "murdertrain.mp3",  "slayer.mp3", 'guile.mp3'];
-  var songTitles = ["DragonForce - Through the Fire and Flames", "The Foreskins - Murder Train", "Slayer - Raining Blood", "Street Fighter 2 - Guile's Theme"]
+  var songs = ["dragonforce.mp3", "murdertrain.mp3",  "slayer.mp3"];
+  var songTitles = ["DragonForce - Through the Fire and Flames", "The Foreskins - Murder Train", "Slayer - Raining Blood"]
   var backgrounds = ["bowl.webm", "fire.webm"];
 
   $('#previous').click(function(){
