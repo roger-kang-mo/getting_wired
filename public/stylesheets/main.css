@@ -164,6 +164,19 @@ h4 {
   display: inline-block;
 }
 
+.box-row:hover .secondary-box.out-link-container {
+  display: table;
+}
+
+.secondary-box.out-link-container {
+  display: table;
+}
+
+.out-link {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .out-link:link, .outlink:visited, .outlink:hover, .outlink:active {
   text-decoration: none;
   color: inherit;
