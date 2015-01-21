@@ -8,7 +8,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name : ['GetWired'],
+  app_name : ['getting-wired'],
   /**
    * Your New Relic license key.
    */
