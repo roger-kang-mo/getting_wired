@@ -1,4 +1,5 @@
 $('document').ready(function(){
+  var millConversion = 60000;
   var audioElement = $('#audio');
   var htmlAudioElem = document.getElementById('audio');
   var background = $('#bgvid');
@@ -12,7 +13,7 @@ $('document').ready(function(){
 
   var songs = ["dragonforce.mp3", "murdertrain.mp3",  "slayer.mp3"];
   var songTitles = ["DragonForce - Through the Fire and Flames", "The Foreskins - Murder Train", "Slayer - Raining Blood"]
-  var backgrounds = ["bowl.webm", "fire.webm"];
+  var backgrounds = ["fire.webm", "bowl.webm"];
 
   $('#previous').click(function(){
     playPrevious();
@@ -34,12 +35,19 @@ $('document').ready(function(){
     goFullHard();
   });
 
-  $('.timer-box').click(function(){
-    goFullHard();
+  $('.timer-box').click(function(event){
+    minutes = $(event.target).data('value');
+
+    handleTimer(minutes * millConversion);
   });
 
   var goFullHard = function(){
     document.getElementById('bgvid').webkitRequestFullScreen();
+  }
+
+  var handleTimer = function(time){
+    goFullHard();
+    setTimeout(function(){exitFullScreen();}, time);
   }
 
   var playPrevious = function(){
@@ -76,6 +84,10 @@ $('document').ready(function(){
 
   var pause = function(){
     htmlAudioElem.pause();
+  }
+
+  var exitFullScreen = function(){
+    document.webkitExitFullscreen();
   }
 
   setSources();
