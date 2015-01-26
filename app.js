@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var minify = require('express-minify');
+//var minify = require('express-minify');
 
 var routes = require('./routes/index');
 
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(minify());
+//app.use(minify());
 app.use('/', routes);
 
 /// catch 404 and forwarding to error handler
